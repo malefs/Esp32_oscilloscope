@@ -27,8 +27,8 @@
 // network settings
 #define HOSTNAME                                      "Oscilloscope"      // define the name of your ESP32 here
 #define MACHINETYPE                                   "ESP32 NodeMCU"     // describe your hardware here
-#define DEFAULT_STA_SSID          "YOUR-STA-SSID" // define default WiFi settings
-#define DEFAULT_STA_PASSWORD      "YOUR-STA-PASSWORD"
+#define DEFAULT_STA_SSID          "WLAN_GPI" // define default WiFi settings
+#define DEFAULT_STA_PASSWORD      "1022291715130472"
 #define DEFAULT_AP_SSID                               "" // HOSTNAME 
 #define DEFAULT_AP_PASSWORD                           "" // "YOUR_AP_PASSWORD" // must be at leas 8 characters long
 #include "network.h"
@@ -74,7 +74,7 @@ void setup () {
   Serial.begin (115200);
 
   // mount file system, WEB server will search for files in /var/www/html directory
-  // FFat.format (); // uncomment this if something goes wrong to delete all configuration files already written
+  //FFat.format (); // uncomment this if something goes wrong to delete all configuration files already written
   mountFileSystem (true);
   if (!isDirectory ("/var/www/html")) { FFat.mkdir ("/var"); FFat.mkdir ("/var/www"); FFat.mkdir ("/var/www/html"); } // so that you won't have to make them manualy yourself
 
